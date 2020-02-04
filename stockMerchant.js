@@ -20,7 +20,6 @@
 
 function sockMerchant(n, ar) {
     let typeOfSocks = [...new Set(ar)]
-    console.log(typeOfSocks)
     let count = 0
     for (let i = 0; i < typeOfSocks.length; i++) {
         const numberOfTimes = ar.filter(socks => socks === typeOfSocks[i]).length
