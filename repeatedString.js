@@ -26,19 +26,26 @@
 // Sample Input 
 
 
+
 function repeatedString(s, n) {
     //split string into array 
     let letterArray = s.split('');
+    let count;
       // get the length of the array
     // get the number of occurences of a in the  new array
-//   let aOccurences = letterArray.filter(letter => letter === 'a').length
-let aOccurences = s.match(/a/g).length
-    let stringLength = s.length
+  let aOccurences = letterArray.filter(letter => letter === 'a').length
+    let stringLength = letterArray.length
     let remainder = n % stringLength
+    let aOccurencesInRemainder = 0
     let numberOfDivisions = (n - remainder)/ stringLength
-    s.slice(0, remainder).match(/a/g).length
-    let count = (aOccurences * numberOfDivisions) + aOccurencesInRemainder
+    if(remainder){
+      let strippedlettersCount = stringLength - remainder
+      letterArray.splice(remainder, strippedlettersCount)
+      aOccurencesInRemainder = letterArray.filter(letter => letter === 'a').length
+    }
+      count = aOccurences * numberOfDivisions + aOccurencesInRemainder
     return count 
   
   
   }
+  
