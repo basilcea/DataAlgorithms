@@ -1,0 +1,18 @@
+function maximumToys(prices, k) {
+  // get the best combinations of prices that whose sum is less than K but the greatest number of count
+//get the prices sorted in an array
+// use K as the target
+//
+const sorted = prices.sort((a,b) => a - b)
+let count=0
+let sum = 0
+for(let i = 0; i < sorted.length ; i++){
+  sum += sorted[i]
+  // console.log(sorted[i], sum, k , k > sorted[i])
+  if(sorted[i] < k){
+    k -= sorted[i]
+    count++
+  }
+}
+return count
+}
