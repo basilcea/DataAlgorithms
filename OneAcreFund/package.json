@@ -1,0 +1,32 @@
+{
+  "name": "codescreen-foo",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^3.2.0",
+    "mocha-eslint": "^6.0.0",
+    "sqlite3": "^4.1.1",
+    "unzip": "^0.1.11"
+  },
+  "scripts": {
+    "start": "node bagCounts/getBagCounts" ,
+    "test": "mocha tests"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "rules": {
+      "semi": "warn",
+      "eqeqeq": "warn",
+      "curly": "warn",
+      "no-bitwise": "warn"
+    },
+    "parserOptions": {
+      "ecmaVersion": 8
+    },
+    "env": {
+      "es6": true,
+      "node": true
+    }
+  }
+}
